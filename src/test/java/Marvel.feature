@@ -34,7 +34,7 @@ Feature: API Marvel prueba 2025
     Scenario: T-API-STF-001-CA4- Crear Personaje Marvel
         * header content-type = 'application/json'
         Given url 'http://bp-se-test-cabcd9b246a5.herokuapp.com/testuser/api/characters'
-        And def character = read('classpath:../data/marvel/MarvelPersonajeDara.json')
+        And def character = read('classpath:../data/marvel/MarvelPersonajeData.json')
         And request character.hero1.create
         And print character.hero1.create
         When method POST
@@ -48,7 +48,7 @@ Feature: API Marvel prueba 2025
     Scenario: T-API-STF-001-CA5- Crear Personaje Marvel Error
         * header content-type = 'application/json'
         Given url 'http://bp-se-test-cabcd9b246a5.herokuapp.com/testuser/api/characters'
-        And def character = read('classpath:../data/marvel/MarvelPersonajeDara.json')
+        And def character = read('classpath:../data/marvel/MarvelPersonajeData.json')
         And request character.hero2
         And print character.hero2
         When method POST
@@ -60,7 +60,7 @@ Feature: API Marvel prueba 2025
     Scenario: T-API-STF-001-CA6- Crear Personaje Marvel Cuerpo Vacío
         * header content-type = 'application/json'
         Given url 'http://bp-se-test-cabcd9b246a5.herokuapp.com/testuser/api/characters'
-        And def character = read('classpath:../data/marvel/MarvelPersonajeDara.json')
+        And def character = read('classpath:../data/marvel/MarvelPersonajeData.json')
         And request character.hero3
         And print character.hero3
         When method POST
@@ -71,12 +71,8 @@ Feature: API Marvel prueba 2025
     @id:7 @putMarvel
     Scenario: T-API-STF-001-CA7- Actualizar Personaje Marvel
         * header content-type = 'application/json'
-        * json lastResponse = manSysProp.getProp("ResponseSaved")
-        * print lastResponse
-        * def id = lastResponse.id
-        * print id
-        Given url 'http://bp-se-test-cabcd9b246a5.herokuapp.com/testuser/api/characters/'+id
-        And def character = read('classpath:../data/marvel/MarvelPersonajeDara.json')
+        Given url 'http://bp-se-test-cabcd9b246a5.herokuapp.com/testuser/api/characters/163'
+        And def character = read('classpath:../data/marvel/MarvelPersonajeData.json')
         And request character.hero1.update
         And print character.hero1.update
         When method PUT
@@ -87,7 +83,7 @@ Feature: API Marvel prueba 2025
     Scenario: T-API-STF-001-CA8- Actualizar Personaje Marvel Error
         * header content-type = 'application/json'
         Given url 'http://bp-se-test-cabcd9b246a5.herokuapp.com/testuser/api/characters/999'
-        And def character = read('classpath:../data/marvel/MarvelPersonajeDara.json')
+        And def character = read('classpath:../data/marvel/MarvelPersonajeData.json')
         And request character.hero1.update
         And print character.hero1.update
         When method PUT
@@ -98,7 +94,7 @@ Feature: API Marvel prueba 2025
     @id:9 @deleteMarvel
     Scenario: T-API-STF-001-CA9- Eliminar Personaje Marvel
         * header content-type = 'application/json'
-        Given url 'http://bp-se-test-cabcd9b246a5.herokuapp.com/testuser/api/characters/1154'
+        Given url 'http://bp-se-test-cabcd9b246a5.herokuapp.com/testuser/api/characters/2473'
         When method DELETE
         Then status 204
 
