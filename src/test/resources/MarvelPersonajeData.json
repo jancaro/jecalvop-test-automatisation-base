@@ -1,0 +1,28 @@
+{
+    "hero1": {
+        "create": {
+            "name": "Captain Marvel test22",
+            "alterego": "Carol Danvers",
+            "description": "the biggest hero in the world",
+            "powers": ["Flight", "Force"]
+        },
+        "update": {
+            "name": "Captain Marvel test22",
+            "alterego": "Carol Danvers",
+            "description": "Updated description",
+            "powers": ["Flight", "Force"]
+        }
+    },
+    "hero2": {
+        "name": "Captain Marvel",
+        "alterego": "Repeat",
+        "description": "Repeat",
+        "powers": ["Repeat"]
+    },
+    "hero3": {
+        "name": "",
+        "alterego": "",
+        "description": "",
+        "powers": []
+    }
+}
